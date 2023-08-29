@@ -1,11 +1,13 @@
 plugins {
     id 'java'
+    id("io.freefair.lombok") version "8.3"
 }
 
 group = 'ru.netology.selenidetest'
 version = '1.0-SNAPSHOT'
 
 // кодировка файлов (если используете русский язык в файлах)
+sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
@@ -18,6 +20,7 @@ dependencies {
     testImplementation 'com.codeborne:selenide:6.17.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.3'
 }
 
 test {
