@@ -4,8 +4,7 @@ import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.List;
+
 import java.util.Locale;
 import java.util.Random;
 
@@ -46,11 +45,11 @@ public class DataGenerator {
         public static UserInfo generateUser(String locale) {
             // создание пользователя user с использованием методов generateCity(locale),generateName(locale),generatePhone(locale)
 
-            return new UserInfo(generateCity(locale),generateName(locale),generatePhone(locale));
+            return new UserInfo(generateCity(),generateName(locale),generatePhone(locale));
         }
     }
 
-    @Value
+    @Value                             //дата класс - определяет структуру объекта
     public static class UserInfo {
         String city;
         String name;
